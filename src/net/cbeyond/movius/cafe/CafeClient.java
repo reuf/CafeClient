@@ -17,6 +17,11 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
+import net.cbeyond.movius.cafe.ClassOfService;
+import net.cbeyond.movius.cafe.FeatureOption;
+import net.cbeyond.movius.cafe.Organization;
+import net.cbeyond.movius.cafe.User;
+
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
@@ -83,8 +88,7 @@ public class CafeClient {
 	
 	private void addUser(User user) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("foid", featureOption.getFoId());
-		map.put("organization_id", featureOption.getOrganizationId());
+		//map.put("foid", user.getFoId());
 		String response = makeCafeCall(buildURL(USER, ADD, map));
 		System.out.println("addUser response="+response);
 	}
