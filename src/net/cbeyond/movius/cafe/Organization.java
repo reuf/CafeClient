@@ -5,10 +5,16 @@ import org.w3c.dom.NodeList;
 
 public class Organization {
 	
+	public static final String AUDIO_CODEC = "audio_codec";
+	public static final String SYSTEM_ID = "system_id";
+	public static final String ORGID = "orgid";
+	public static final String DESCRIPTION = "description";
+	
 	private String audioCodec = null;
 	private String description = null;
 	private String domain = null;
 	private String id = null;
+	private String systemId = null;
 	private String orgId = null;
 	private String parentId = null;
 	private String countCos = null;
@@ -172,6 +178,14 @@ public class Organization {
 
 	public void setCountAutoAttendants(String countAutoAttendants) {
 		this.countAutoAttendants = countAutoAttendants;
+	}
+
+	public String getSystemId() {
+		return systemId;
+	}
+
+	public void setSystemId(String systemId) {
+		this.systemId = systemId;
 	}
 
 	@Override

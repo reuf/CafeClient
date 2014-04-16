@@ -45,36 +45,36 @@ public class CafeClient {
 	public CafeClient() {
 //		addOrganization("1001", "Brian Test");
 //		addUser("1001", "Brian", "Michael", "4042892327");
-		System.out.println(getUser("4042892327"));
-		List<Organization> orgs = getAllOrgs();
-		for (Organization org : orgs) {
-			System.out.println(org);
-		}
-		List<FeatureOption> fos = getAllFeatureOptions();
-		for (FeatureOption fo : fos) {
-			System.out.println(fo);
-		}
-		List<ClassOfService> coss = getAllClassOfServices();
-		for (ClassOfService cos : coss) {
-			System.out.println(cos);
-		}
-		List<User> users = getAllUsers();
-		for (User user : users) {
-			System.out.println(user);
-		}
+//		System.out.println(getUser("4042892327"));
+//		List<Organization> orgs = getAllOrgs();
+//		for (Organization org : orgs) {
+//			System.out.println(org);
+//		}
+//		List<FeatureOption> fos = getAllFeatureOptions();
+//		for (FeatureOption fo : fos) {
+//			System.out.println(fo);
+//		}
+//		List<ClassOfService> coss = getAllClassOfServices();
+//		for (ClassOfService cos : coss) {
+//			System.out.println(cos);
+//		}
+//		List<User> users = getAllUsers();
+//		for (User user : users) {
+//			System.out.println(user);
+//		}
 	}
 	
-	private void addOrganization(Organization organization) {
+	public void addOrganization(Organization organization) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("system_id", "1");
-		map.put("audio_codec", "ulaw");
-		map.put("orgid", organization.getOrgId());
-		map.put("description", organization.getDescription());
+		map.put(Organization.SYSTEM_ID, organization.getSystemId());
+		map.put(Organization.AUDIO_CODEC, organization.getAudioCodec());
+		map.put(Organization.ORGID, organization.getOrgId());
+		map.put(Organization.DESCRIPTION, organization.getDescription());
 		String response = makeCafeCall(buildURL(ORGANIZATIONS, ADD, map));
 		System.out.println("addOrganization response="+response);
 	}
 	
-	private void addFeatureOption(FeatureOption featureOption) {
+	public void addFeatureOption(FeatureOption featureOption) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put(FeatureOption.FOID, featureOption.getFoId());
 		map.put(FeatureOption.ORGANIZATION_ID, featureOption.getOrganizationId());
@@ -86,7 +86,7 @@ public class CafeClient {
 		System.out.println("addFeatureOption response="+response);
 	}
 	
-	private void addClassOfService(ClassOfService cos) {
+	public void addClassOfService(ClassOfService cos) {
 		Map<String, String> map = new HashMap<String, String>();
 		if (cos.getCosId() >= 0)
 			map.put(ClassOfService.COSID, Integer.toString(cos.getCosId()));
@@ -100,7 +100,7 @@ public class CafeClient {
 		System.out.println("addClassOfService response="+response);
 	}
 	
-	private void deleteFeatureOption(FeatureOption featureOption) {
+	public void deleteFeatureOption(FeatureOption featureOption) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put(FeatureOption.FOID, featureOption.getFoId());
 		map.put(FeatureOption.ORGANIZATION_ID, featureOption.getOrganizationId());
@@ -108,14 +108,14 @@ public class CafeClient {
 		System.out.println("deleteFeatureOption response="+response);
 	}
 	
-	private void addUser(User user) {
+	public void addUser(User user) {
 		Map<String, String> map = new HashMap<String, String>();
 		//map.put("foid", user.getFoId());
 		String response = makeCafeCall(buildURL(USER, ADD, map));
 		System.out.println("addUser response="+response);
 	}
 	
-	private FeatureOption getFeatureOption(String featureOptionId, String orgId) {
+	public FeatureOption getFeatureOption(String featureOptionId, String orgId) {
 		try {
 			Map<String, String> map = new HashMap<String, String>();
 			map.put(FeatureOption.FOID, featureOptionId);
@@ -132,7 +132,7 @@ public class CafeClient {
 		return null;
 	}
 	
-	private List<Organization> getAllOrgs() {
+	public List<Organization> getAllOrgs() {
 		List<Organization> orgs = new ArrayList<Organization>();
 		try {
 			String response = makeCafeCall(buildURL(ORGANIZATIONS, LIST, new HashMap<String, String>()));
@@ -148,7 +148,7 @@ public class CafeClient {
 		return orgs;
 	}
 	
-	private List<FeatureOption> getAllFeatureOptions() {
+	public List<FeatureOption> getAllFeatureOptions() {
 		List<FeatureOption> fos = new ArrayList<FeatureOption>();
 		try {
 			String response = makeCafeCall(buildURL(FEATURE_OPTIONS, LIST, new HashMap<String, String>()));
@@ -164,7 +164,7 @@ public class CafeClient {
 		return fos;
 	}
 	
-	private List<ClassOfService> getAllClassOfServices() {
+	public List<ClassOfService> getAllClassOfServices() {
 		List<ClassOfService> coss = new ArrayList<ClassOfService>();
 		try {
 			String response = makeCafeCall(buildURL(COS, LIST, new HashMap<String, String>()));
@@ -180,7 +180,7 @@ public class CafeClient {
 		return coss;
 	}
 	
-	private List<User> getAllUsers() {
+	public List<User> getAllUsers() {
 		List<User> users = new ArrayList<User>();
 		try {
 			Map<String, String> map = new HashMap<String, String>();
@@ -198,7 +198,7 @@ public class CafeClient {
 		return users;
 	}
 	
-	private User addUser(String orgId, String firstName, String lastName, String tn) {
+	public User addUser(String orgId, String firstName, String lastName, String tn) {
 		User user = new User();
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("orgid", orgId);
@@ -217,7 +217,7 @@ public class CafeClient {
 		return user;
 	}
 	
-	private User getUser(String userId) {
+	public User getUser(String userId) {
 		User user = null;
 		try {
 			Map<String, String> map = new HashMap<String, String>();
