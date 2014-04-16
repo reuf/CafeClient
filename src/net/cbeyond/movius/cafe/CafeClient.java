@@ -76,8 +76,8 @@ public class CafeClient {
 	
 	private void addFeatureOption(FeatureOption featureOption) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("foid", featureOption.getFoId());
-		map.put("organization_id", featureOption.getOrganizationId());
+		map.put(FeatureOption.FOID, featureOption.getFoId());
+		map.put(FeatureOption.ORGANIZATION_ID, featureOption.getOrganizationId());
 		Map<String, Boolean> options = featureOption.asMap(true);
 		for (String key : options.keySet()) {
 			map.put(key, options.get(key).toString());
@@ -86,10 +86,24 @@ public class CafeClient {
 		System.out.println("addFeatureOption response="+response);
 	}
 	
+	private void addClassOfService(ClassOfService cos) {
+		Map<String, String> map = new HashMap<String, String>();
+		if (cos.getCosId() >= 0)
+			map.put(ClassOfService.COSID, Integer.toString(cos.getCosId()));
+		if (cos.getOrganizationId() >= 0)
+			map.put(ClassOfService.ORGANIZATION_ID, Integer.toString(cos.getOrganizationId()));
+		Map<String, Boolean> options = cos.asMap(true);
+		for (String key : options.keySet()) {
+			map.put(key, options.get(key).toString());
+		}
+		String response = makeCafeCall(buildURL(COS, ADD, map));
+		System.out.println("addClassOfService response="+response);
+	}
+	
 	private void deleteFeatureOption(FeatureOption featureOption) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("foid", featureOption.getFoId());
-		map.put("organization_id", featureOption.getOrganizationId());
+		map.put(FeatureOption.FOID, featureOption.getFoId());
+		map.put(FeatureOption.ORGANIZATION_ID, featureOption.getOrganizationId());
 		String response = makeCafeCall(buildURL(FEATURE_OPTIONS, DELETE, map));
 		System.out.println("deleteFeatureOption response="+response);
 	}
@@ -104,8 +118,8 @@ public class CafeClient {
 	private FeatureOption getFeatureOption(String featureOptionId, String orgId) {
 		try {
 			Map<String, String> map = new HashMap<String, String>();
-			map.put("foid", featureOptionId);
-			map.put("organization_id", orgId);
+			map.put(FeatureOption.FOID, featureOptionId);
+			map.put(FeatureOption.ORGANIZATION_ID, orgId);
 			String response = makeCafeCall(buildURL(FEATURE_OPTIONS, READ, map));
 			System.out.println("addFeatureOptions response="+response);
 			XPath xpath = XPathFactory.newInstance().newXPath();
