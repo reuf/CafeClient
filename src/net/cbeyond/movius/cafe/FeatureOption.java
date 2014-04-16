@@ -86,6 +86,35 @@ public class FeatureOption {
 	public static final String FAMILY_SUMMARY = "family_summary";
 	public static final String GREETING_FORWARDING_NUMBER = "greeting_forwarding_number";
 	public static final String GREETING_MODE_2 = "greeting_mode_2";
+	public static final String GUI_CHILD_DIGIT = "gui_child_digit";
+	public static final String GUI_CHILD_NUMBER = "gui_child_number";
+	public static final String GUI_DEPOSIT_PWD = "gui_deposit_pwd";
+	public static final String GUI_FORWARD_GREETING = "gui_forward_greeting";
+	public static final String GUI_FORWARDING_NUMBER = "gui_forwarding_number";
+	public static final String GUI_PLAY_ANI = "gui_play_ani";
+	public static final String GUI_PLAY_CALLED_NUMBER = "gui_play_called_number";
+	public static final String GUI_PLAY_MSG_HEADER = "gui_play_msg_header";
+	public static final String GUI_SAVE_EMPTY_MSG = "gui_save_emtpy_msg";
+	public static final String GUI_TIME_ZONE = "gui_time_zone";
+	public static final String GUI_V2T_ENABLE = "gui_v2t_enable";
+	public static final String GUI_VVM_ENABLE = "gui_vvm_enable";
+	public static final String MCN_OPTION = "mcn_option";
+	public static final String NAME_DELETE_WARNING = "name_delete_warning";
+	public static final String NOTIFICATION_MMS = "notification_mms";
+	public static final String NOTIFICATION_OPTION = "notification_option";
+	public static final String NOTIFICATION_OUTDIAL = "notification_outdial";
+	public static final String NOTIFICATION_WHITE_BLACK_LIST = "notification_white_black_list";
+	public static final String NUT_NAME_GREET = "nut_name_greet";
+	public static final String NUT_SYSTEM_GREET = "nut_system_greet";
+	public static final String ON_CANCEL_REID = "on_cancel_reid";
+	public static final String OPERATOR_NUMBER = "operator_number";
+	public static final String OPERATOR_REVERT_PWD = "operator_revert_pwd";
+	public static final String PREVIOUS_MENU = "previous_menu";
+	public static final String RECORD_MESSAGE = "record_message";
+	public static final String REPL_FLAG = "repl_flag";
+	public static final String SKIP_RESAVE = "skip_resave";
+	public static final String SUBSCRIBER_FASTFWD_MESSAGE = "subscriber_fastfwd_message";
+	public static final String TIME_GREETINGS = "time_greetings";
 
 	public static final String DESCRIPTION = "description";
 	public static final String FOID = "foid";
@@ -170,6 +199,35 @@ public class FeatureOption {
 	boolean familySummary = false;
 	boolean greetingForwardingNumber = false;
 	boolean greetingMode2 = false;
+	boolean guiChildDigit = false;
+	boolean guiChildNumber = false;
+	boolean guiDepositPwd = false;
+	boolean guiForwardGreeting = false;
+	boolean guiForwardingNumber = false;
+	boolean guiPlayAni = false;
+	boolean guiPlayCalledNumber = false;
+	boolean guiPlayMsgHeader = false;
+	boolean guiSaveEmtpyMsg = false;
+	boolean guiTimeZone = false;
+	boolean guiV2tEnable = false;
+	boolean guiVvmEnable = false;
+	boolean mcnOption = false;
+	boolean nameDeleteWarning = false;
+	boolean notificationMms = false;
+	boolean notificationOption = false;
+	boolean notificationOutdial = false;
+	boolean notificationWhiteBlackList = false;
+	boolean nutNameGreet = false;
+	boolean nutSystemGreet = false;
+	boolean onCancelReid = false;
+	boolean operatorNumber = false;
+	boolean operatorRevertPwd = false;
+	boolean previousMenu = false;
+	boolean recordMessage = false;
+	boolean replFlag = false;
+	boolean skipResave = false;
+	boolean subscriberFastfwdMessage = false;
+	boolean timeGreetings = false;
 
 	private String description = null;
 	private String foId = null;
@@ -862,6 +920,238 @@ public class FeatureOption {
 
 	public void setGreetingMode2(boolean greetingMode2) {
 		this.greetingMode2 = greetingMode2;
+	}
+
+	public boolean isGuiChildDigit() {
+		return guiChildDigit;
+	}
+
+	public void setGuiChildDigit(boolean guiChildDigit) {
+		this.guiChildDigit = guiChildDigit;
+	}
+
+	public boolean isGuiChildNumber() {
+		return guiChildNumber;
+	}
+
+	public void setGuiChildNumber(boolean guiChildNumber) {
+		this.guiChildNumber = guiChildNumber;
+	}
+
+	public boolean isGuiDepositPwd() {
+		return guiDepositPwd;
+	}
+
+	public void setGuiDepositPwd(boolean guiDepositPwd) {
+		this.guiDepositPwd = guiDepositPwd;
+	}
+
+	public boolean isGuiForwardGreeting() {
+		return guiForwardGreeting;
+	}
+
+	public void setGuiForwardGreeting(boolean guiForwardGreeting) {
+		this.guiForwardGreeting = guiForwardGreeting;
+	}
+
+	public boolean isGuiForwardingNumber() {
+		return guiForwardingNumber;
+	}
+
+	public void setGuiForwardingNumber(boolean guiForwardingNumber) {
+		this.guiForwardingNumber = guiForwardingNumber;
+	}
+
+	public boolean isGuiPlayAni() {
+		return guiPlayAni;
+	}
+
+	public void setGuiPlayAni(boolean guiPlayAni) {
+		this.guiPlayAni = guiPlayAni;
+	}
+
+	public boolean isGuiPlayCalledNumber() {
+		return guiPlayCalledNumber;
+	}
+
+	public void setGuiPlayCalledNumber(boolean guiPlayCalledNumber) {
+		this.guiPlayCalledNumber = guiPlayCalledNumber;
+	}
+
+	public boolean isGuiPlayMsgHeader() {
+		return guiPlayMsgHeader;
+	}
+
+	public void setGuiPlayMsgHeader(boolean guiPlayMsgHeader) {
+		this.guiPlayMsgHeader = guiPlayMsgHeader;
+	}
+
+	public boolean isGuiSaveEmtpyMsg() {
+		return guiSaveEmtpyMsg;
+	}
+
+	public void setGuiSaveEmtpyMsg(boolean guiSaveEmtpyMsg) {
+		this.guiSaveEmtpyMsg = guiSaveEmtpyMsg;
+	}
+
+	public boolean isGuiTimeZone() {
+		return guiTimeZone;
+	}
+
+	public void setGuiTimeZone(boolean guiTimeZone) {
+		this.guiTimeZone = guiTimeZone;
+	}
+
+	public boolean isGuiV2tEnable() {
+		return guiV2tEnable;
+	}
+
+	public void setGuiV2tEnable(boolean guiV2tEnable) {
+		this.guiV2tEnable = guiV2tEnable;
+	}
+
+	public boolean isGuiVvmEnable() {
+		return guiVvmEnable;
+	}
+
+	public void setGuiVvmEnable(boolean guiVvmEnable) {
+		this.guiVvmEnable = guiVvmEnable;
+	}
+
+	public boolean isMcnOption() {
+		return mcnOption;
+	}
+
+	public void setMcnOption(boolean mcnOption) {
+		this.mcnOption = mcnOption;
+	}
+
+	public boolean isNameDeleteWarning() {
+		return nameDeleteWarning;
+	}
+
+	public void setNameDeleteWarning(boolean nameDeleteWarning) {
+		this.nameDeleteWarning = nameDeleteWarning;
+	}
+
+	public boolean isNotificationMms() {
+		return notificationMms;
+	}
+
+	public void setNotificationMms(boolean notificationMms) {
+		this.notificationMms = notificationMms;
+	}
+
+	public boolean isNotificationOption() {
+		return notificationOption;
+	}
+
+	public void setNotificationOption(boolean notificationOption) {
+		this.notificationOption = notificationOption;
+	}
+
+	public boolean isNotificationOutdial() {
+		return notificationOutdial;
+	}
+
+	public void setNotificationOutdial(boolean notificationOutdial) {
+		this.notificationOutdial = notificationOutdial;
+	}
+
+	public boolean isNotificationWhiteBlackList() {
+		return notificationWhiteBlackList;
+	}
+
+	public void setNotificationWhiteBlackList(boolean notificationWhiteBlackList) {
+		this.notificationWhiteBlackList = notificationWhiteBlackList;
+	}
+
+	public boolean isNutNameGreet() {
+		return nutNameGreet;
+	}
+
+	public void setNutNameGreet(boolean nutNameGreet) {
+		this.nutNameGreet = nutNameGreet;
+	}
+
+	public boolean isNutSystemGreet() {
+		return nutSystemGreet;
+	}
+
+	public void setNutSystemGreet(boolean nutSystemGreet) {
+		this.nutSystemGreet = nutSystemGreet;
+	}
+
+	public boolean isOnCancelReid() {
+		return onCancelReid;
+	}
+
+	public void setOnCancelReid(boolean onCancelReid) {
+		this.onCancelReid = onCancelReid;
+	}
+
+	public boolean isOperatorNumber() {
+		return operatorNumber;
+	}
+
+	public void setOperatorNumber(boolean operatorNumber) {
+		this.operatorNumber = operatorNumber;
+	}
+
+	public boolean isOperatorRevertPwd() {
+		return operatorRevertPwd;
+	}
+
+	public void setOperatorRevertPwd(boolean operatorRevertPwd) {
+		this.operatorRevertPwd = operatorRevertPwd;
+	}
+
+	public boolean isPreviousMenu() {
+		return previousMenu;
+	}
+
+	public void setPreviousMenu(boolean previousMenu) {
+		this.previousMenu = previousMenu;
+	}
+
+	public boolean isRecordMessage() {
+		return recordMessage;
+	}
+
+	public void setRecordMessage(boolean recordMessage) {
+		this.recordMessage = recordMessage;
+	}
+
+	public boolean isReplFlag() {
+		return replFlag;
+	}
+
+	public void setReplFlag(boolean replFlag) {
+		this.replFlag = replFlag;
+	}
+
+	public boolean isSkipResave() {
+		return skipResave;
+	}
+
+	public void setSkipResave(boolean skipResave) {
+		this.skipResave = skipResave;
+	}
+
+	public boolean isSubscriberFastfwdMessage() {
+		return subscriberFastfwdMessage;
+	}
+
+	public void setSubscriberFastfwdMessage(boolean subscriberFastfwdMessage) {
+		this.subscriberFastfwdMessage = subscriberFastfwdMessage;
+	}
+
+	public boolean isTimeGreetings() {
+		return timeGreetings;
+	}
+
+	public void setTimeGreetings(boolean timeGreetings) {
+		this.timeGreetings = timeGreetings;
 	}
 
 	@Override

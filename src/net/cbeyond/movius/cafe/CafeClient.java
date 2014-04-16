@@ -86,6 +86,14 @@ public class CafeClient {
 		System.out.println("addFeatureOption response="+response);
 	}
 	
+	private void deleteFeatureOption(FeatureOption featureOption) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("foid", featureOption.getFoId());
+		map.put("organization_id", featureOption.getOrganizationId());
+		String response = makeCafeCall(buildURL(FEATURE_OPTIONS, DELETE, map));
+		System.out.println("deleteFeatureOption response="+response);
+	}
+	
 	private void addUser(User user) {
 		Map<String, String> map = new HashMap<String, String>();
 		//map.put("foid", user.getFoId());
